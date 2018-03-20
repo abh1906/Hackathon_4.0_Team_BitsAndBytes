@@ -1,5 +1,5 @@
 # Hackathon_4.0_Team_BitsAndBytes
-RFID Based Library Book Search and Antitheft Detectiong 
+RFID Based Library Book Search and Antitheft Detection
 
 This project aims at integrating the rfid modules to the well known LMS :koha.
 
@@ -13,8 +13,8 @@ Step 2: created  databasename=koha_mykoha
 
 
 Step3: After installing koha copy the files from the conf folder and copy the files :
- a.  paste the file named ports.conf at the file at location /etc/apache2/ports.conf 
- b. paste the file named mykoha.conf to the file at location /etc/apache2/sites-enabled/mykoha.conf
+ 1.  paste the file named ports.conf at the file at location /etc/apache2/ports.conf 
+ 2. paste the file named mykoha.conf to the file at location /etc/apache2/sites-enabled/mykoha.conf
  
 Step4:import the sql file koha_mykoha.sql to the project which contains the newly added and modified tables.
  
