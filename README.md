@@ -12,7 +12,7 @@ Step 2: created  **databasename=koha_mykoha ,
                  username=koha_mykoha**
 
 
-Step3: After installing koha copy the files from the conf folder and perform the following:
+Step3: After installing koha copy the files from the **koha_conf** folder and perform the following:
  1.  paste the file named ports.conf at the file at location **/etc/apache2/ports.conf** 
  2. paste the file named mykoha.conf to the file at location **/etc/apache2/sites-enabled/mykoha.conf**
  
