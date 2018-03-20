@@ -1,5 +1,5 @@
 # Hackathon_4.0_Team_BitsAndBytes
-RFID Based Library Book Search and Antitheft Detection
+**RFID Based Library Book Search and Antitheft Detection using the Internet of Things.**
 
 This project aims at integrating the rfid modules to the well known **open source LMS :koha.**
 
