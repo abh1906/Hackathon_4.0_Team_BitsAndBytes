@@ -1,0 +1,12 @@
+<?php
+	$rfid=$_GET["p"];
+	require_once("connection.php");
+	$sql="select it.biblionumber from rfid r, items it where r.barcode=it.barcode and it.itemnumber not in (select itemnumber from issues)";
+	if($result=$con->query($sql)){
+		if($result->num_rows > 0){
+			$row=$result->fetch_assoc();
+			$sql2="insert into available values()";
+		}
+	}
+?>
+

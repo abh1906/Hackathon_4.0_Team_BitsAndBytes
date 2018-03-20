@@ -1,0 +1,10 @@
+<?php
+
+$servername="localhost";
+$dbname="koha_mykoha";
+$username="koha_mykoha";
+$password="sL925avEhO6utH1V";
+$con=new mysqli($servername,$
+
+
+?>

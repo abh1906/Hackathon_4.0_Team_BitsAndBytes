@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.burhan.libsearch.MainActivity"
+    android:background="#FBF4EE"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:paddingTop="150dp"
+    android:paddingBottom="100dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:textSize="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIBSearch"
+            android:layout_marginLeft="102dp"
+            android:textStyle="bold"
+            android:textColor="#5D4037"
+            android:fontFamily="cursive"/>
+
+        <EditText
+            android:id="@+id/et_login"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/round"
+            android:drawableLeft="@drawable/ic_person_grey_400_24dp"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:fontFamily="normal"
+            android:textSize="16dp" />
+
+
+       <!-- <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_lock_grey_400_24dp"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:fontFamily="normal"
+            android:layout_marginTop="20dp"
+            android:textColorHint="#795548"
+            android:textSize="15dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BF9367"/>-->
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/background_login"
+            android:text="Log In"
+            android:textAllCaps="false"
+            android:padding="16dp"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#fff"/>
+
+    </LinearLayout>
+
+</LinearLayout>

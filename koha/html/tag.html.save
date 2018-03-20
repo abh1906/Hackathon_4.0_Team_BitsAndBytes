@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+
+
+
+
+
+
+
+<body>
+<form action="tag.php" method = "POST">
+  Book Barcode:<br>
+  <input type="text" name="barcode"><br>
+  RFID:<br>
+  <input type="text" name="rfid"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

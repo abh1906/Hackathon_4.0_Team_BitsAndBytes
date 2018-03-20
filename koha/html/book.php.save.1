@@ -1,0 +1,19 @@
+<?php
+$author=$_GET["p"];
+require_once('connection.php');
+$book="";
+$sql="SE * from biblio b,biblioitems bb where b.biblionumber=bb.biblionumber and author='".$author."'";
+$result=$con->query($sql);
+while($row=$result->fetch_assoc())
+{
+$row["title"];
+}
+else{
+
+
+echo "no";
+}
+
+?>
+
+

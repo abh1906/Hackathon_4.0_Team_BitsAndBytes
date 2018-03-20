@@ -1,0 +1,39 @@
+
+
+<html>
+
+
+
+<head>
+
+
+
+<script>
+
+
+
+function getHint(){
+
+
+   
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("code").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET", "getTag.php", true);
+        xmlhttp.send();
+    }
+</script>
+<body>
+<form action="tag.php" method = "POST">
+  Book Barcode:<br>
+  <input type="text" name="barcode"><br>
+  RFID:<br>
+  <input type="text" name="rfid" id="code" onfocus="getHint()"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

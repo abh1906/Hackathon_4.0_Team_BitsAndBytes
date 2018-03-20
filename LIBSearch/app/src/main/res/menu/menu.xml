@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:onClick="profile"
+        android:clickable="true"
+        android:icon="@drawable/ic_person_grey_400_24dp"/>
+
+    <item
+        android:id="@+id/search"
+        android:title="Search"
+        android:clickable="true"
+        android:icon="@drawable/ic_youtube_searched_for_black_24dp"/>
+
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+        android:clickable="true"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"/>
+</menu>

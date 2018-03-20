@@ -1,0 +1,5 @@
+<?php
+
+$book_name=$_GET["p"];
+
+$servername="localhost"

@@ -1,0 +1,23 @@
+<?php
+
+require_once('connection.php');
+
+
+$rfid=$_GET["p"];
+
+
+$sql="select rid from (select barcode,rid  from issues natual join items natural join rfid) as d where rid='".$rfid."'";
+;
+
+
+$result=$con->query($sql);
+if($row=$result->fetch_assoc())
+{
+	echo "#".$row["rid"];
+	
+else
+echo "#"."no";
+
+?>
+
+header("Location: http://45.55.34.11/tag.php");

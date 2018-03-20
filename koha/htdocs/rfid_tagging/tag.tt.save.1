@@ -1,0 +1,139 @@
+
+[% USE Price %]
+[% USE Branches %]
+[% INCLUDE 'doc-head-open.inc' %]
+<title>Koha &rsaquo; RFID Tagging</title>
+[% INCLUDE 'doc-head-close.inc' %]
+<link rel="stylesheet" type="text/css" href="[% interface %]/[% theme %]/css/datatables.css" />
+[% INCLUDE 'datatables.inc' %]
+<link href="[% interface %]/lib/jquery/plugins/treetable/stylesheets/jquery.treetable.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="[% interface %]/lib/jquery/plugins/treetable/jquery.treetable.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+dt_overwrite_html_sorting_localeCompare();
+
+$(document).ready(function() {
+
+    var oTable = $("#accounts").dataTable($.extend(true, {}, dataTablesDefaults, {
+        "fnDrawCallback": function ( oSettings ) {
+            if ( oSettings.aiDisplay.length == 0 )
+            {
+                return;
+            }
+
+            var nTrs = $('#accounts tbody tr');
+            var iColspan = nTrs[0].getElementsByTagName('td').length;
+            var sLastGroup = "";
+            for ( var i=0 ; i<nTrs.length ; i++ )
+            {
+                var iDisplayIndex = oSettings._iDisplayStart + i;
+                var sGroup = oSettings.aoData[ oSettings.aiDisplay[iDisplayIndex] ]._aData[1];
+                if ( sGroup != sLastGroup )
+                {
+                    var nGroup = document.createElement( 'tr' );
+                    var nCell = document.createElement( 'td' );
+                    nCell.colSpan = iColspan;
+                    nCell.className = "group";
+                    nCell.innerHTML = sGroup;
+                    nGroup.appendChild( nCell );
+                    nTrs[i].parentNode.insertBefore( nGroup, nTrs[i] );
+                    sLastGroup = sGroup;
+                }
+            }
+        },
+        "footerCallback": function ( row, data, start, end, display ) {
+            var api = this.api(), data;
+            footer_column_sum( api, [ 6, 7, 8, 9 ] );
+        },
+        "aoColumnDefs": [
+            { "bVisible": false, "aTargets": [ 0, 1 ] },
+            { "bSortable": false, "aTargets": ["_all"] }
+        ],
+        'dom': '<"top pager"ilpf>tr<"bottom pager"ip>',
+        'bSort': true,
+        'aaSortingFixed': [[ 1, 'asc' ]],
+        'bPaginate': false,
+        "bAutoWidth": false
+    }));
+
+    $(oTable).treetable({
+        expandable: true
+    });
+
+    $(oTable).treetable('expandAll');
+    $("#expand_all").click(function(e){
+        e.preventDefault();
+        $(oTable).treetable('expandAll');
+    });
+    $("#collapse_all").click(function(e){
+        e.preventDefault();
+        $(oTable).treetable('collapseAll');
+    });
+
+    $("#hide_inactive").click(function(e){
+        e.preventDefault();
+        oTable.fnFilter( 1, 0 ); // Show only active=1
+    });
+    $("#show_inactive").click(function(e){
+        e.preventDefault();
+        oTable.fnFilter( '', 0 );
+    });
+    $("#hide_inactive").click();
+
+});
+//]]>
+
+function getHint(){
+	alert("anand");
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = functioatus);
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                         var p=xmlhttp.responseText;
+			alert("ans="+p);	
+		document.getElementById("code").value="anand loves mahi";
+            }
+        };
+        xmlhttp.open("GET", "/cgi-bin/koha/authorities/tag.pl", true);
+        xmlhttp.send();
+
+}
+</script>
+
+</head>
+<body id="acq_acqui-home" class="acq">
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'home-search.inc' %]
+
+<div id="breadcrumbs"><a href="/cgi-bin/koha/mainpage.pl">Home</a> &rsaquo; RFID Tagging</div>
+
+<div id="doc3" class="yui-t2">
+
+<div id="bd">
+    <div id="yui-main">
+    <div class="yui-b">
+
+
+<h1>RFID Tagging</h>
+
+<div class="yui-g">
+<div class="yui-u first">
+<div id="acqui_acqui_home_order">
+    <fieldset>
+        <legend>Tagging</legend>
+        <form name="findsupplier" action="/cgi-bin/koha/authorities/pages.pl" method="get">
+            <p>
+		<label for="supplierpage">RFID Tag : </label><input type="text" size="25" name="rfid" id="code" onfocus="getHint()" class="focus" /></br></br>
+		<label for="supplierpage">Barcode : </label><input type="text" size="25" name="barcode" id="supplierpage" class="focus" /></br></br>
+		<label for="supplierpage">Shelf No : </label><input type="text" size="25" name="location" id="supplierpage" class="focus" /></br></br>
+
+            <input type="submit" value="Search" />
+            </p>
+        </form>
+    </fieldset>
+
+</div>
+</div>
+</div>
+[% INCLUDE 'intranet-bottom.inc' %]

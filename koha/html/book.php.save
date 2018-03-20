@@ -1,0 +1,14 @@
+<?php
+$author=$_GET["p"];
+require_once('connection.php');
+
+$sql="select * from biblio natural join biblioitems where author='".author."'";
+
+$result=$con->query($sql);
+if($row=$result->fetch_assoc()){
+$book_name=$row["title"];
+echo $book_name;
+
+}
+
+?>

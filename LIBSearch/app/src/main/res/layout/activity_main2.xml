@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/draw_icon"
+    android:background="#FBF4EE"
+    android:layout_height="match_parent"
+    tools:context="com.example.burhan.libsearch.Main2Activity">
+
+   <!-- <android.support.design.widget.NavigationView
+        app:headerLayout="@layout/header"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:itemTextColor="@color/darkgray"
+        app:itemIconTint="@color/darkgray"
+        app:menu="@menu/menu"
+        android:layout_gravity="start">
+    </android.support.design.widget.NavigationView>-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="bold"
+                android:textStyle="bold"
+                android:text="Welcome  :"
+                android:textColor="#555555"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="bold"
+                android:text=""
+                android:textColor="#555555"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <SearchView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:id="@+id/search"
+                android:queryHint="Search by BookName"
+                android:layout_width="335dp"
+                android:layout_height="50dp"
+                android:iconifiedByDefault="false"
+                android:background="@drawable/search_layout">
+            </SearchView>
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/prf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"/>
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible">
+            </ListView>
+
+        </LinearLayout>
+
+            <!-- <EditText
+                 android:id="@+id/searchview"
+                 android:layout_width="260dp"
+                 android:layout_height="45dp"
+                 android:background="@drawable/search_layout"
+                 android:drawableLeft="@drawable/ic_search_grey_400_24dp"
+                 android:drawablePadding="12dp"
+                 android:ems="10"
+                 android:hint="Search by Bookname..."
+                 android:inputType="text"
+                 android:maxLines="1"
+                 android:padding="8dp"
+                 android:fontFamily="normal"
+                 android:textSize="12dp" />
+
+             <Button
+                 android:id="@+id/search"
+                 android:layout_width="50dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="13dp"
+                 android:layout_marginTop="5dp"
+                 android:background="@drawable/search_background"
+                 android:drawableTop="@drawable/ic_search_white_24dp" />-->
+
+
+
+        <!--<SearchView
+                android:layout_marginTop="50dp"
+                android:id="@+id/searchview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icoifiedByDefault="false"
+                android:queryHint="Enter Author / Book Name"
+                android:paddingTop="30dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:background="@drawable/round">
+            </SearchView>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search Your Book"
+            android:textStyle="italic"
+            android:textColor="#c0c0c0"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="90dp"/>-->
+
+
+
+       <!-- <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"/>-->
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

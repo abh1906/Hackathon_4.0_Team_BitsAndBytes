@@ -1,0 +1,79 @@
+
+#!/usr/bin/perl
+
+# Copyright 2008 - 2009 BibLibre SARL
+# This file is part of Koha.
+#
+# Koha is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# Koha is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Koha; if not, see <http://www.gnu.org/licenses>.
+
+=head1 NAME
+
+acqui-home.pl
+
+=head1 DESCRIPTION
+
+this script is the main page for acqui
+
+=cut
+
+use strict;
+use warnings;
+
+use CGI qw ( -utf8 );
+use C4::Auth;
+use C4::Output;
+use C4::Acquisition;
+use C4::Budgets;
+use C4::Members;
+use C4::Debug;
+use C4::Suggestions;
+use Koha::Acquisition::Currencies;
+use Koha::Patrons;
+
+/usr/share/koha/intranet/htdocs/intranet-tmpl/prog/en/modules/circ
+use DBI;
+#!/usr/bin/perl
+
+# HTTP HEADER
+# print "Content-type: text/html \n\n";
+
+# MYSQL CONFIG VARIABLES
+
+my $driver = "mysql";
+my $database = "koha_mykoha";
+my $dsn = "DBI:$driver:database=$database";
+
+my $host = "localhost";
+my $user = "koha_mykoha";
+my $pw = "sL925avEhO6utH1V";
+
+my $dbh = DBI->connect($dsn, $user, $pw ) or die $DBI::errstr;
+
+my $sth = $dbh->prepare("SELECT rfid FROM get_tag");
+
+my $ans;
+
+$sth->execute() or die $DBI::errstr;
+# print "Number of rows found :" + $sth->rows;
+while (my @row = $sth->fetchrow_array()) {
+   my ($rfid) = @row;
+   $ans=$rfid;
+   print $rfid;
+}
+
+$sth->finish();
+# PRINT THE RESULTS
+
+output_html_with_http_headers $query,$cookie, $template->output;
+print $ans;
