@@ -23,7 +23,7 @@ Step4:import the sql file koha_mykoha.sql to the project which contains the newl
  
  The code for hardware is included in the **nodemcu** folder.
  
- Our instance of koha is installed on the digital ocean droplet whose **ip is:45.55.34.11**
+ Our instance of koha is installed on the digital ocean droplet whose **ip is:http://45.55.34.11:8080** for administration s    staff.For Patrons login **ip is:http://45.55.34.11:98**
  
  
  Thank You..
