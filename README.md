@@ -7,8 +7,8 @@ STEPS for implementation:
 
 Step1: Installing koha.The link for installation is as follows:https://wiki.koha-community.org/wiki/Koha_on_ubuntu_-_packages
 
-Step 2: created  **databasename=koha_mykoha
-                 password=sL925avEhO6utH1V
+Step 2: created  **databasename=koha_mykoha ,
+                 password=sL925avEhO6utH1V ,
                  username=koha_mykoha**
 
 
